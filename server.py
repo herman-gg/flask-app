@@ -6,7 +6,11 @@ app = Flask(__name__)
 
 @app.route('/status', methods=['GET'])
 def status():
-    return jsonify({'timestamp': datetime.utcnow().isoformat() + 'Z'})
+    status_data = {
+        'timestamp': datetime.utcnow().isoformat() + 'Z',
+        'pod': os.getenv('POD_NAME', default='None')
+    }
+    return jsonify(status_data)
 
 @app.route('/', methods=['GET'])
 def index():
