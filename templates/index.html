@@ -9,15 +9,25 @@
       width: 100%;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center; /* Horizontal centering */
       align-items: center;
       background-color: #f0f0f0;
+      font-family: 'Courier New', Courier, monospace;
     }
   </style>
 </head>
 <body>
   <div id="content">
-    <img src="https://www.joblo.com/wp-content/uploads/2021/01/rowan-atkinson-mr-bean-2021.jpg" alt="bean">
+    <div>
+      <ul>
+        <li><strong>Timestamp:</strong> {{ data.timestamp }}</li>
+        <li><strong>IP:</strong> {{ data.ip }}</li>
+      </ul>
+    </div>
+    <div>
+      <img src="https://www.joblo.com/wp-content/uploads/2021/01/rowan-atkinson-mr-bean-2021.jpg" alt="bean">
+    </div>
   </div>
 </body>
 </html>
